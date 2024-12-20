@@ -1,0 +1,519 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "segoe ui";
+  background-color: #d5cdcc;
+}
+
+header {
+  height: 100%;
+  padding: 0px 10px 0px 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  height: 150px;
+  width: 100%;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: flex;
+}
+
+.nav > .nav-header > .nav-title {
+  display: flex;
+  font-size: 20px;
+  align-items: center; /* Center the logo and text vertically */
+  color: #29abe2;
+  padding: 5px;
+  background: none; /* Ensure no background */
+}
+
+.nav-title img {
+  background: none; /* Ensure no background for the image */
+}
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: flex;
+  height: 70px;
+  float: right;
+  padding: 4px;
+  font-size: 30px;
+  margin-top: -60px; /* Adjust this value to move links up */
+}
+
+.nav > .nav-links > a {
+  display: flex;
+  padding: 10px; /* Add padding for space around the links */
+  text-decoration: none;
+  color: #000000; /* Ensure the color is correct */
+  margin: 0 10px; /* Add horizontal space between links */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px; /* Optional: rounded corners on hover */
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+.background-image {
+  background-image: url("gettyimages-1919863292-2048x2048.jpg"); /* Set the image as a background */
+  background-size: cover; /* Makes the image cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  height: 100vh; /* Set height (e.g., full viewport) */
+  display: flex; /* Use flexbox to align the text */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  text-align: center; /* Center text inside the container */
+  position: relative; /* Allows absolute positioning for text, if needed */
+}
+
+/* Styling for the text overlay */
+.text-overlay {
+  padding: 20px; /* Adds space around the text */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+.text-overlay h1 {
+  font-size: 5.5em; /* Adjust text size */
+  margin: 0 0 10px; /* Spacing between heading and paragraph */
+  color: #f5f0ff; /* White font */
+  text-shadow: 2px 2px 4px rgba(67, 15, 224, 0.7); /* Dark shadow for depth */
+  font-weight: bolder;
+}
+
+.text-overlay p {
+  font-size: 2.5em; /* Adjust text size */
+  margin: 0; /* Removes extra margin */
+  color: #6c63ff; /* Bright yellow for emphasis */
+  text-shadow: 1px 1px 3px rgba(7, 7, 7, 0.7);
+  font-weight: bold;
+}
+
+button {
+  background-color: #29abe2;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+button a {
+  font-size: 30px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+button a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  position: relative;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content-container {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.content-container h1 {
+  font-size: 70px;
+  color: #333;
+  padding: 20px;
+  margin-top: -150px;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container p {
+  font-size: 30px;
+  color: #000;
+  margin: 10px;
+}
+
+.courses-section {
+  background-color: #fdf6e3;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.courses-section h2 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  max-width: 2400px;
+}
+
+.course {
+  background: none;
+  border-radius: 10px;
+  margin: 15px;
+  max-width: 560px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.course:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.course img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.course h3 {
+  margin: 5px;
+  padding: 2px;
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+}
+
+.course p {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.benefits-section {
+  padding: 50px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.benefits-section h1 {
+  font-size: 5rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.benefits-section p {
+  font-size: 2rem;
+  color: #000;
+  margin-top: -40px;
+}
+
+.benefits-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 2400px;
+  width: auto;
+}
+
+.benefit-card {
+  background-color: none;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 30%; /* Adjusted width */
+  height: 500px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.benefit-card h3 {
+  font-size: 35px;
+  color: #333;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.benefit-card p {
+  font-size: 25px;
+  font-weight: bolder;
+  color: #666;
+  margin-top: -35px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 350px;
+  margin: -10px 0;
+  border-radius: 20px;
+}
+.course-card {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 5px #007bff solid;
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+.course-card:hover {
+  transform: scale(1.05);
+}
+.course-card h3 {
+  font-size: 2rem;
+  color: #444;
+  margin-top: -10px;
+}
+.course-card p {
+  font-size: 1.4rem;
+  color: #000;
+  margin-top: -15px;
+}
+.course-card .price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bolder;
+}
+.course-card .duration {
+  color: #007bff;
+}
+.enroll-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6c63ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.enroll-btn:hover {
+  background-color: #4e47cc;
+}
+
+.payment-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #3cbce7, #444dad);
+}
+
+.payment-section h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 20px;
+  color: #333;
+}
+
+.payment-option {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.payment-option h3 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.payment-option p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.bank-details {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.bank-details p {
+  margin: 5px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.contact-section {
+  background-image: url("R.jpeg"); /* Set the image as a background */
+  background-size: cover; /* Makes the image cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  height: 100vh; /* Set height (e.g., full viewport) */
+  display: flex; /* Use flexbox to align the text */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  position: relative; /* Allows absolute positioning for text, if needed */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contact-section h1 {
+  font-size: 10rem;
+  line-height: 200px;
+  color: #ffffff;
+}
+
+.contact-section p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left: -20px;
+  margin-top: 80px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: -600px;
+  margin-right: -850px;
+  text-align: left;
+}
+
+.contact-info {
+  min-width: 300px;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.contact-info p {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 800px;
+  height: 50vh;
+  padding: 50px;
+  margin-left: 30px;
+  margin-top: -450px;
+  margin-right: -500px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #062e85;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form .terms {
+  display: flex;
+  text-align: left;
+  margin-right: 270px;
+  margin-left: -400px;
+}
+
+.contact-form .terms input {
+  margin-right: 10px;
+}
+
+.contact-form button {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #4e47cc;
+}
+
+#form-response {
+  display: none; /* Hidden by default */
+}
+
+
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+footer hr {
+  margin: 2rem 0;
+}
+
