@@ -207,43 +207,56 @@
 </section>
 
 <section class="contact-section">
-  <h1>Get in Touch</h1>
-  <p>Reach out to us for any inquiries about our online training courses.Our team is here to assist you in mastering essential computer skills.</p>
-
-  
-
-    <!-- Contact Form -->
-    <div class="contact-form">
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Type your message" required></textarea>
-        
-        <div class="terms">
-          <input type="checkbox" id="terms" name="terms" required>
-          <label for="terms" style="margin-left: -300px;">I accept the <a href="#" style="color: #6c63ff; text-decoration: underline; ">Terms and Conditions</a></label>
-        </div>
-        
-        <button type="submit">Submit</button>
-        <p id="form-response" style="display: none; color: green; margin-top: 10px;">Your message has been sent successfully!</p>
-      </form>
+  <div class="container">
+    <div class="header">
+      <h1>Get in <br/> Touch</h1>
+      <p>
+        Reach out to us for any inquiries about our online training courses.
+        <br />
+        Our team is here to assist you in mastering essential computer skills.
+      </p>
     </div>
 
-    <div class="contact-container">
+    <div class="content">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Type your message" required></textarea>
+
+          <div class="terms">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">
+              I accept the
+              <a href="#" class="terms-link">Terms and Conditions</a>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+          <p id="form-response" class="success-message">Your message has been sent successfully!</p>
+        </form>
+      </div>
+
       <!-- Contact Info -->
       <div class="contact-info">
         <h2>Contact Information</h2>
-        <p><strong>Email:</strong>emmacomputersacademy@gmail.com</p>
-        <p><strong>Phone:</strong>+234 916 219 6414, +234 909 100 8226</p>
-        <p><strong>Location:</strong>Calabar, Cross Rivers</p>
+        <ul>
+          <li><strong>Email:</strong> emmacomputersacademy@gmail.com</li>
+          <li><strong>Phone:</strong> +234 916 219 6414, +234 909 100 8226</li>
+          <li><strong>Location:</strong> Calabar, Cross Rivers</li>
+        </ul>
       </div>
-  </div> 
+    </div>
+  </div>
 </section>
+
       <footer>
         <hr />
         © 2025 Emma Computers Academy.
