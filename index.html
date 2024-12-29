@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="styles.css" />
     
   </head>
-  
-  <body>
+    <body>
     <header>
       <div class="nav">
         <input type="checkbox" id="nav-check">
@@ -37,17 +36,16 @@
         </div>
       
         <div class="nav-links">
-          <a href="#homepage" target="_blank">Home</a>
-          <a href="#aboutpage" target="_blank">About Us</a>
-          <a href="#courses" target="_blank">Our Courses</a>
-          <a href="#services" target="_blank">Our Services</a>
-          <a href="#prices" target="_blank">Course Packages</a>
-          <a href="#payment" target="_blank">Payment Options</a>
-          <a href="#contact" target="_blank">Contact Us</a>
+          <a href="#homepage" target="_self">Home</a>
+          <a href="#aboutpage" target="_self">About Us</a>
+          <a href="#courses" target="_self">Our Courses</a>
+          <a href="#services" target="_self">Our Services</a>
+          <a href="#prices" target="_self">Course Packages</a>
+          <a href="#payment" target="_self">Payment Options</a>
+          <a href="#contact" target="_self">Contact Us</a>
         </div>
       </div>
     </header>
-    
      <main>
      <section class="hero" id="homepage">
           <div class="background-image">
@@ -55,7 +53,7 @@
               <h1>Your Gateway to a Tech-Savvy Future</h1>
               <p>Unlock your potentials with our expertly certified courses designed for sucess in the digital world.
                 <br/>Learn at your own pace and gain hands on experience from seasoned professionals.</p>
-                 <button><a href="#">Enroll Now</a></button>
+                 <button><a href="#contact">Enroll Now</a></button>
             </div>
           </div>
         </div>
@@ -142,40 +140,40 @@
           </div>
         </div>
     </section>
-<section class="courses-section">
-  
+<section class="courses-section" id="prices">
+  <h2>Course Packages</h2>
   <div class="cards-container">
     <div class="course-card">
       <h3>Intro to Computer</h3>
       <p>Learn the basics of computer operations and usage.</p>
       <p class="price">Price: ₦37,500</p>
       <p class="duration">Duration: 1 month</p>
-      <a href="#" class="enroll-btn">Enroll Now</a>
+      <a href="#contact-form" class="enroll-btn">Enroll Now</a>
     </div>
     <div class="course-card">
       <h3>Graphic Design</h3>
       <p>Master the fundamentals of graphic design and creativity.</p>
       <p class="price">Price: ₦75,000</p>
       <p class="duration">Duration: 2 months</p>
-      <a href="#" class="enroll-btn">Enroll Now</a>
+      <a href="#contact-form" class="enroll-btn">Enroll Now</a>
     </div>
     <div class="course-card">
       <h3>Web Development</h3>
       <p>Build websites from scratch with modern technologies.</p>
       <p class="price">Price: ₦112,500</p>
       <p class="duration">Duration: 3 months</p>
-      <a href="#" class="enroll-btn">Enroll Now</a>
+      <a href="#contact-form" class="enroll-btn">Enroll Now</a>
     </div>
     <div class="course-card">
       <h3>Digital Marketing</h3>
       <p>Learn strategies to grow businesses online effectively.</p>
       <p class="price">Price: ₦60,000</p>
       <p class="duration">Duration: 1.5 months</p>
-      <a href="#" class="enroll-btn">Enroll Now</a>
+      <a href="#contact-form" class="enroll-btn">Enroll Now</a>
     </div>
   </div>
 </section>
-<section class="payment-section">
+<section class="payment-section" id="payment">
   <h2>Payment Options</h2>
   <p style="text-align: center; color: #666; font-size: 2rem;font-weight: bolder;">
     Complete your enrollment by making a payment via bank transfer.
@@ -206,10 +204,10 @@
   </div>
 </section>
 
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="container">
     <div class="header">
-      <h1>Get in <br/> Touch</h1>
+      <h1>Get in Touch</h1>
       <p>
         Reach out to us for any inquiries about our online training courses.
         <br />
@@ -218,6 +216,16 @@
     </div>
 
     <div class="content">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <ul>
+          <li><strong>Email:</strong> emmacomputersacademy@gmail.com</li>
+          <li><strong>Phone:</strong> +234 916 219 6414, +234 909 100 8226</li>
+          <li><strong>Location:</strong> Calabar, Cross Rivers</li>
+        </ul>
+      </div>
+
       <!-- Contact Form -->
       <div class="contact-form">
         <h2>Contact Us</h2>
@@ -231,33 +239,14 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Type your message" required></textarea>
 
-          <div class="terms">
-            <input type="checkbox" id="terms" name="terms" required />
-            <label for="terms">
-              I accept the
-              <a href="#" class="terms-link">Terms and Conditions</a>
-            </label>
-          </div>
-
           <button type="submit" class="submit-btn">Submit</button>
           <p id="form-response" class="success-message">Your message has been sent successfully!</p>
         </form>
       </div>
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h2>Contact Information</h2>
-        <ul>
-          <li><strong>Email:</strong> emmacomputersacademy@gmail.com</li>
-          <li><strong>Phone:</strong> +234 916 219 6414, +234 909 100 8226</li>
-          <li><strong>Location:</strong> Calabar, Cross Rivers</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
-
-      <footer>
+ <footer>
         <hr />
         © 2025 Emma Computers Academy.
       </footer>

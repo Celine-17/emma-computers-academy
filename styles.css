@@ -62,15 +62,15 @@ header {
   font-size: 1rem;
   padding: 5px 0; /* Add padding for space around the links */
   text-decoration: none;
+  border-radius: 10px;
   color: #000000; /* Ensure the color is correct */
-  margin: 0 10px; /* Add horizontal space between links */
+  margin: 10px; /* Add horizontal space between links */
   transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .nav > .nav-links > a:hover {
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px; /* Optional: rounded corners on hover */
-  margin: 0px 5px;
+  border-radius: 5px; /* Optional: rounded corners on hover */
 }
 
 .nav > #nav-check {
@@ -168,7 +168,7 @@ button a:hover {
   font-size: 1rem;
   color: #000;
   margin-bottom: 10px;
-  margin-top: -40px;
+  margin-top: -10px;
 }
 
 .courses-section {
@@ -234,7 +234,7 @@ button a:hover {
 }
 
 .benefits-section {
-  padding: 50px 20px;
+  padding: 30px 20px;
   position: relative;
   text-align: center;
   background-color: #d5cdcc;
@@ -242,14 +242,14 @@ button a:hover {
 
 .benefits-section h1 {
   font-size: 3rem;
-  margin-top: 10px;
+  margin: 20px;
   color: #333;
 }
 
 .benefits-section p {
   font-size: 1.5rem;
   color: #000;
-  margin-top: -30px;
+  margin-top: 10px;
 }
 
 .benefits-container {
@@ -295,7 +295,7 @@ button a:hover {
   font-size: 1rem;
   font-weight: bolder;
   color: #666;
-  margin-top: -30px;
+  margin-top: 3px;
   text-align: center;
 }
 
@@ -326,12 +326,12 @@ button a:hover {
   font-size: 2rem;
   color: #444;
   margin-top: -10px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .course-card p {
   font-size: 1.1rem;
   color: #000;
-  margin-top: -15px;
+  margin-top: 5px;
 }
 .course-card .price {
   font-size: 1.2rem;
@@ -356,8 +356,7 @@ button a:hover {
 }
 
 .payment-section {
-  padding: 50px 20px;
-  background-color: #fff;
+  padding: 20px 20px;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -404,151 +403,128 @@ button a:hover {
 }
 
 .contact-section {
-  background-image: url("R.jpeg"); /* Set the image as a background */
-  background-size: cover; /* Makes the image cover the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
-  height: 100vh; /* Set height (e.g., full viewport) */
-  display: flex; /* Use flexbox to align the text */
-  align-items: center; /* Vertically center the text */
-  position: relative; /* Allows absolute positioning for text, if needed */
-  padding: 60px 20px;
+  padding: 30px 20px;
+  background-color: #fdf6e3;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures flexibility for smaller screens */
+  background-image: url("R.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensures the section covers the viewport height */
+  padding: 40px 20px;
   box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px; /* Consistent spacing between elements */
 }
 
-.contact-section h1 {
-  font-size: 3rem; /* Adjusted font size for better responsiveness */
-  line-height: 1.2; /* Removed fixed height to ensure proper spacing */
-  color: #ffffff;
+.header {
+  flex: 1 1 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 4rem;
+  line-height: 1.2;
   margin-bottom: 20px;
+  color: #fff;
 }
 
-.contact-section p {
-  color: #ffffff;
+.header p {
   font-size: 1.2rem;
-  font-weight: 400;
-  margin-top: 20px; /* Adjusted margin for better spacing */
+  color: #f0f0f0;
+  margin: 20px auto;
+  max-width: 600px;
 }
 
-.contact-container {
+.content {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Ensures consistent spacing between elements */
-  justify-content: center; /* Centers content horizontally */
-  margin-top: 40px;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
 }
 
-.contact-info {
-  flex: 1 1 300px; /* Makes the contact info flexible and responsive */
-  min-width: 300px;
-  background: #ffffff;
-  color: #333333;
+.contact-info,
+.contact-form {
+  flex: 1 1 400px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  color: white;
 }
 
-.contact-info h2 {
-  font-size: 1.5rem; /* Increased font size for better readability */
-  color: #062e85; /* Matches the overall theme */
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.contact-info li {
   margin-bottom: 10px;
-}
-
-.contact-info p {
-  font-size: 1rem; /* Adjusted font size for better readability */
-  color: #333333;
-  margin: 5px 0;
-}
-
-.contact-form {
-  flex: 1 1 500px; /* Ensures the form scales responsively */
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  font-size: 1rem;
 }
 
 .contact-form label {
   display: block;
   margin-bottom: 5px;
-  color: #062e85; /* Changed to match the theme */
   font-weight: bold;
-  font-size: 1rem; /* Adjusted font size for consistency */
+  font-size: 1rem;
+  color: #fff;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #062e85;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .contact-form textarea {
-  height: 120px;
+  height: 100px;
   resize: none;
 }
 
-.contact-form .terms {
-  display: flex;
-  align-items: center; /* Centers the checkbox and label */
-  margin: 20px 0;
-}
-
-.contact-form .terms input {
-  margin-right: 10px;
-}
-
-.contact-form .terms label {
-  font-size: 0.9rem;
-  color: #333333;
-}
-
 .contact-form button {
-  background-color: #6c63ff;
-  color: #fff;
+  background-color: #4e47cc;
+  color: white;
   border: none;
   padding: 12px 20px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 50%;
 }
 
 .contact-form button:hover {
-  background-color: #4e47cc;
+  background-color: #3b36a3;
 }
 
 #form-response {
-  display: none; /* Hidden by default */
-  color: green;
+  display: none;
+  color: black;
   font-size: 1rem;
   margin-top: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column; /* Stacks content vertically on smaller screens */
-    gap: 20px;
-  }
-
-  .contact-info,
-  .contact-form {
-    flex: 1 1 100%; /* Full width for smaller screens */
-  }
-
-  .contact-section h1 {
-    font-size: 2rem; /* Reduced size for smaller screens */
-  }
-
-  .contact-section p {
-    font-size: 1rem; /* Adjusted for readability */
-  }
 }
 
 footer {
@@ -558,64 +534,7 @@ footer {
 }
 
 footer hr {
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column; /* Stack links vertically on smaller screens */
-    align-items: center;
-  }
-
-  .nav-btn {
-    display: block; /* Show the button for mobile navigation */
-  }
-
-  .background-image {
-    height: 70vh; /* Adjust height for mobile */
-  }
-
-  .text-overlay h1 {
-    font-size: 3em; /* Smaller font size for mobile */
-  }
-
-  .text-overlay p {
-    font-size: 1.5em; /* Smaller font size for mobile */
-  }
-
-  .benefit-card {
-    width: 100%; /* Full width on mobile */
-    height: auto; /* Allow height to adjust */
-  }
-
-  .course-card {
-    max-width: 100%; /* Full width on mobile */
-  }
-
-  .contact-form {
-    min-width: 100%; /* Full width on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .text-overlay h1 {
-    font-size: 2.5em; /* Further reduce font size for very small screens */
-  }
-
-  .text-overlay p {
-    font-size: 1.2em; /* Further reduce font size for very small screens */
-  }
-
-  .nav-links a {
-    font-size: 18px; /* Smaller font size for links */
-  }
-
-  .contact-section h1 {
-    font-size: 5rem; /* Adjust heading size for mobile */
-  }
-
-  .contact-section p {
-    font-size: 1.5rem; /* Adjust paragraph size for mobile */
-  }
-}
