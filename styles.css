@@ -77,37 +77,127 @@ header {
   display: none;
 }
 
-.background-image {
-  background-image: url("gettyimages-1919863292-2048x2048.jpg"); /* Set the image as a background */
-  background-size: cover; /* Makes the image cover the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
-  height: 100vh; /* Set height (e.g., full viewport) */
-  display: flex; /* Use flexbox to align the text */
-  justify-content: center; /* Horizontally center the text */
-  align-items: center; /* Vertically center the text */
-  text-align: center; /* Center text inside the container */
-  position: relative; /* Allows absolute positioning for text, if needed */
+#nav-check:checked ~ .nav-links {
+  height: 200px;
 }
 
-/* Styling for the text overlay */
+/* Existing styles remain the same */
+
+/* Responsive styles for mobile and tablet */
+@media (max-width: 768px) {
+  /* Hide the nav links by default */
+  .nav > .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #d5cdcc;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  /* Show nav links when the checkbox is checked */
+  #nav-check:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Make the hamburger menu button visible */
+  .nav > .nav-btn {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 101;
+  }
+
+  /* Style the hamburger menu lines */
+  .nav > .nav-btn label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  .nav > .nav-btn label span {
+    display: block;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Transform hamburger icon to "X" when menu is open */
+  #nav-check:checked + .nav-btn label span:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: top left;
+  }
+
+  #nav-check:checked + .nav-btn label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-check:checked + .nav-btn label span:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+
+  /* Adjust nav title spacing */
+  .nav > .nav-header > .nav-title {
+    flex: 1;
+    font-size: 0.8rem;
+  }
+
+  /* Center align the nav links */
+  .nav > .nav-links > a {
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Remove border for the last link */
+  .nav > .nav-links > a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Background image and hero section styles */
+.background-image {
+  background-image: url("gettyimages-1919863292-2048x2048.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Text overlay styles */
 .text-overlay {
-  padding: 20px; /* Adds space around the text */
-  border-radius: 10px; /* Optional: rounded corners */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .text-overlay h1 {
-  font-size: 3rem; /* Adjust text size */
-  margin: 0 0 10px; /* Spacing between heading and paragraph */
-  color: #f5f0ff; /* White font */
-  text-shadow: 2px 2px 4px rgba(67, 15, 224, 0.7); /* Dark shadow for depth */
+  font-size: 3rem;
+  margin: 0 0 10px;
+  color: #f5f0ff;
+  text-shadow: 2px 2px 4px rgba(67, 15, 224, 0.7);
   font-weight: bolder;
 }
 
 .text-overlay p {
-  font-size: 1.4rem; /* Adjust text size */
-  margin: 0; /* Removes extra margin */
-  color: #6c63ff; /* Bright yellow for emphasis */
+  font-size: 1.4rem;
+  margin: 0;
+  color: #6c63ff;
   text-shadow: 1px 1px 3px rgba(7, 7, 7, 0.7);
   font-weight: bold;
 }
@@ -132,17 +222,19 @@ button a:hover {
   text-decoration: underline;
 }
 
+/* About section styles */
 .section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 50px;
-  position: relative;
   background-color: #d5cdcc;
+  flex-wrap: wrap; /* Enables wrapping for responsiveness */
 }
 
 .image-container {
   flex: 1;
+  max-width: 50%; /* Limits the image width */
 }
 
 .image-container img {
@@ -160,8 +252,7 @@ button a:hover {
   color: #333;
   padding: 20px;
   margin-top: -10px;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .content-container p {
@@ -169,6 +260,96 @@ button a:hover {
   color: #000;
   margin-bottom: 10px;
   margin-top: -10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .text-overlay h1 {
+    font-size: 2.5rem; /* Reduce font size */
+  }
+
+  .text-overlay p {
+    font-size: 1.2rem; /* Reduce font size */
+  }
+
+  button a {
+    font-size: 14px; /* Adjust button text size */
+  }
+
+  .section {
+    padding: 30px; /* Reduce padding */
+  }
+
+  .content-container h1 {
+    font-size: 2.5rem; /* Adjust heading size */
+  }
+
+  .content-container p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+  }
+}
+
+@media (max-width: 768px) {
+  .background-image {
+    height: 60vh; /* Adjust height for smaller screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 2rem; /* Further reduce font size */
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .section {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .image-container {
+    max-width: 100%; /* Allow image to take full width */
+    margin-bottom: 20px; /* Add space below the image */
+  }
+
+  .content-container {
+    padding-left: 0; /* Remove padding for smaller screens */
+  }
+
+  .content-container h1 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .content-container p {
+    font-size: 0.85rem; /* Adjust paragraph size */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Reduce font size for very small screens */
+  }
+
+  .text-overlay p {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+
+  button {
+    padding: 8px; /* Adjust button padding */
+  }
+
+  button a {
+    font-size: 13px;
+  }
+
+  .content-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-container p {
+    font-size: 0.8rem;
+  }
 }
 
 .courses-section {
@@ -231,6 +412,73 @@ button a:hover {
   color: #666;
   text-align: center;
   line-height: 1.4;
+}
+
+/* For tablets and medium screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .courses-container {
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    gap: 15px; /* Reduce spacing between cards */
+  }
+
+  .course {
+    max-width: 45%; /* Two cards per row */
+  }
+
+  .course h3 {
+    font-size: 1.6rem; /* Adjust heading size */
+  }
+
+  .course p {
+    font-size: 0.9rem; /* Adjust text size */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .courses-container {
+    gap: 10px; /* Reduce spacing further for smaller screens */
+  }
+
+  .course {
+    max-width: 100%; /* Full width cards */
+    margin: 10px 0; /* Add vertical spacing between cards */
+  }
+
+  .course img {
+    max-height: 200px; /* Limit image height */
+  }
+
+  .course h3 {
+    font-size: 1.4rem; /* Reduce heading size */
+  }
+
+  .course p {
+    font-size: 0.85rem; /* Reduce paragraph text size */
+  }
+}
+
+/* For small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .courses-section h2 {
+    font-size: 1.8rem; /* Reduce section title size */
+  }
+
+  .course {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .course img {
+    max-height: 150px; /* Smaller images for small screens */
+  }
+
+  .course h3 {
+    font-size: 1.2rem; /* Smaller heading size */
+  }
+
+  .course p {
+    font-size: 0.75rem; /* Smaller text */
+  }
 }
 
 .benefits-section {
@@ -299,6 +547,83 @@ button a:hover {
   text-align: center;
 }
 
+/* For tablets and medium screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .benefits-container {
+    flex-wrap: wrap; /* Allow cards to stack */
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
+
+  .benefit-card {
+    width: 45%; /* Two cards per row */
+    height: auto; /* Adjust height to content */
+  }
+
+  .benefit-card img {
+    height: 250px; /* Reduce image height */
+  }
+
+  .benefit-card h3 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem; /* Adjust paragraph text size */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .benefits-container {
+    flex-wrap: wrap; /* Cards stack vertically */
+    gap: 10px;
+  }
+
+  .benefit-card {
+    width: 100%; /* Full width for each card */
+    margin: 10px 0; /* Add vertical spacing between cards */
+  }
+
+  .benefit-card img {
+    height: 200px; /* Further reduce image height */
+  }
+
+  .benefit-card h3 {
+    font-size: 1.4rem; /* Reduce heading size */
+  }
+
+  .benefit-card p {
+    font-size: 0.85rem; /* Smaller paragraph text */
+  }
+}
+
+/* For small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .benefits-section h1 {
+    font-size: 2rem; /* Reduce section title size */
+  }
+
+  .benefits-section p {
+    font-size: 1rem; /* Reduce paragraph size in section intro */
+  }
+
+  .benefit-card {
+    padding: 8px; /* Reduce padding for compact layout */
+  }
+
+  .benefit-card img {
+    height: 150px; /* Further limit image height */
+  }
+
+  .benefit-card h3 {
+    font-size: 1.2rem; /* Smaller headings */
+  }
+
+  .benefit-card p {
+    font-size: 0.75rem; /* Smaller text */
+  }
+}
+
 .cards-container {
   display: flex;
   justify-content: center;
@@ -355,6 +680,92 @@ button a:hover {
   background-color: #4e47cc;
 }
 
+/* For tablets and medium screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .cards-container {
+    flex-wrap: wrap; /* Stack cards when space is limited */
+    gap: 15px; /* Reduce the gap between cards */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .course-card {
+    width: 45%; /* Fit two cards per row */
+    height: auto; /* Adjust height dynamically */
+    padding: 15px; /* Slightly smaller padding */
+  }
+
+  .course-card h3 {
+    font-size: 1.8rem; /* Slightly reduce heading size */
+  }
+
+  .course-card p {
+    font-size: 1rem; /* Adjust paragraph text size */
+  }
+
+  .enroll-btn {
+    padding: 8px 15px; /* Make button smaller */
+    font-size: 0.9rem;
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-wrap: wrap;
+    gap: 10px; /* Further reduce gap for smaller screens */
+  }
+
+  .course-card {
+    width: 100%; /* Each card takes full width */
+    margin: 10px 0; /* Add space between cards */
+    height: auto; /* Dynamic height */
+  }
+
+  .course-card img {
+    height: 200px; /* Optional: Add if you have images to resize */
+  }
+
+  .course-card h3 {
+    font-size: 1.5rem; /* Reduce heading size for smaller screens */
+  }
+
+  .course-card p {
+    font-size: 0.9rem; /* Adjust text size for smaller screens */
+  }
+
+  .enroll-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* For small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+    gap: 5px; /* Reduce gap to fit small screens */
+  }
+
+  .course-card {
+    width: 100%; /* Full width on small screens */
+    padding: 10px; /* Reduce padding for a compact look */
+  }
+
+  .course-card h3 {
+    font-size: 1.3rem; /* Smaller heading size */
+  }
+
+  .course-card p {
+    font-size: 0.8rem; /* Smaller text size */
+  }
+
+  .enroll-btn {
+    padding: 6px 10px; /* Make button even smaller */
+    font-size: 0.8rem;
+  }
+}
+
 .payment-section {
   padding: 20px 20px;
   margin: 50px auto;
@@ -402,6 +813,88 @@ button a:hover {
   color: #333;
 }
 
+/* Tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .payment-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .payment-option {
+    padding: 15px;
+  }
+
+  .payment-option h3 {
+    font-size: 1.3rem;
+  }
+
+  .payment-option p {
+    font-size: 0.9rem;
+  }
+
+  .bank-details p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .payment-section {
+    padding: 15px;
+  }
+
+  .payment-section h2 {
+    font-size: 2rem;
+  }
+
+  .payment-option {
+    padding: 10px;
+  }
+
+  .payment-option h3 {
+    font-size: 1.2rem;
+  }
+
+  .payment-option p {
+    font-size: 0.85rem;
+  }
+
+  .bank-details p {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .payment-section {
+    padding: 10px;
+  }
+
+  .payment-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .payment-option {
+    padding: 8px;
+  }
+
+  .payment-option h3 {
+    font-size: 1rem;
+  }
+
+  .payment-option p {
+    font-size: 0.8rem;
+  }
+
+  .bank-details p {
+    font-size: 0.9rem;
+  }
+
+  .payment-section div p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contact Section */
 .contact-section {
   padding: 30px 20px;
   background-color: #fdf6e3;
@@ -409,10 +902,11 @@ button a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
+
 .container {
   display: flex;
   flex-wrap: wrap; /* Ensures flexibility for smaller screens */
-  background-image: url("R.jpeg");
+  background-image: url("R.jpeg"); /* Ensure your image path is correct */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -432,17 +926,17 @@ button a:hover {
 }
 
 .header h1 {
-  font-size: 4rem;
+  font-size: 2.5rem; /* Reduced font size */
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #fff;
 }
 
 .header p {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Reduced font size */
   color: #f0f0f0;
-  margin: 20px auto;
-  max-width: 600px;
+  margin: 15px auto;
+  max-width: 500px; /* Reduce max width for better readability */
 }
 
 .content {
@@ -455,16 +949,17 @@ button a:hover {
 
 .contact-info,
 .contact-form {
-  flex: 1 1 400px;
+  flex: 1 1 300px; /* Reduced card width */
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
   padding: 20px;
   border-radius: 10px;
   color: white;
+  margin-bottom: 20px;
 }
 
 .contact-info h2,
 .contact-form h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Reduced font size */
   margin-bottom: 15px;
   color: #fff;
   text-align: center;
@@ -478,7 +973,7 @@ button a:hover {
 
 .contact-info li {
   margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 1rem; /* Reduced font size */
 }
 
 .contact-form label {
@@ -513,7 +1008,7 @@ button a:hover {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 50%;
+  width: 100%; /* Make the button take full width on small screens */
 }
 
 .contact-form button:hover {
@@ -527,14 +1022,101 @@ button a:hover {
   margin-top: 10px;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem; /* Smaller font size for the header */
+  }
+
+  .header p {
+    font-size: 0.9rem; /* Smaller font size for the paragraph */
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: 1 1 45%; /* Increase the card width on smaller screens */
+    padding: 15px;
+  }
+
+  .contact-info li {
+    font-size: 0.9rem; /* Smaller font size for list items */
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem; /* Reduce font size for inputs and labels */
+  }
+
+  .contact-form button {
+    width: 100%; /* Button takes full width on smaller screens */
+    font-size: 0.9rem; /* Smaller font size for button */
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem; /* Further reduce font size on very small screens */
+  }
+
+  .header p {
+    font-size: 0.8rem; /* Further reduce font size for paragraph */
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: 1 1 100%; /* Full width on very small screens */
+    padding: 10px;
+  }
+
+  .contact-info li {
+    font-size: 0.8rem; /* Smaller font size for list items */
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.8rem; /* Reduce font size for inputs and labels */
+  }
+
+  .contact-form button {
+    width: 100%; /* Full width for button on smaller screens */
+    font-size: 0.8rem; /* Smaller button font size */
+    padding: 10px 15px;
+  }
+}
+
+/* Footer Styling */
 footer {
   text-align: center;
   margin: 10px 0;
   background-color: #d5cdcc;
+  padding: 10px 20px;
 }
 
 footer hr {
   margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ccc; /* Added a border style for the line */
 }
 
-/* Media Queries for Responsiveness */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 10px; /* Adjust padding for smaller screens */
+  }
+
+  footer hr {
+    margin: 15px 0; /* Adjust margin for the line on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 15px 5px; /* Further adjust padding for very small screens */
+  }
+
+  footer hr {
+    margin: 10px 0; /* Further adjust the line margin for small screens */
+  }
+}
